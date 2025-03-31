@@ -7,26 +7,28 @@ public class DepartmentDto {
 	private String departmentAddress;
 	private String departmentCode;
 	
-	
-	public Long getdepartmentId() {
-		// TODO Auto-generated method stub
+	public Long getDepartmentId() {
 		return departmentId;
 	}
-	
-	public String getdepartmentName() {
-		// TODO Auto-generated method stub
+	public void setDepartmentId(Long departmentId) {
+		this.departmentId = departmentId;
+	}
+	public String getDepartmentName() {
 		return departmentName;
-		
 	}
-	public String getdepartmentAddress() {
-		// TODO Auto-generated method stub
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+	public String getDepartmentAddress() {
 		return departmentAddress;
-		
 	}
-	public String getdepartmentCode() {
-		// TODO Auto-generated method stub
+	public void setDepartmentAddress(String departmentAddress) {
+		this.departmentAddress = departmentAddress;
+	}
+	public String getDepartmentCode() {
 		return departmentCode;
-		
 	}
-
+	public void setDepartmentCode(String departmentCode) {
+		this.departmentCode = departmentCode;
+	}
 }

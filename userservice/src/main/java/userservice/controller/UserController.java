@@ -26,9 +26,29 @@ public class UserController {
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<ResponseDto> getUser(@PathVariable("id") Long userId){
+    
+    @GetMapping("{id}")
+    public ResponseEntity<ResponseDto> getUser(@PathVariable("id") Long userId) {
+        System.out.println("Fetching user for ID: " + userId);
+
         ResponseDto responseDto = userService.getUser(userId);
+
+        
+        //responseDto is not null at this point.
+        if (responseDto == null) {
+            System.out.println("ResponseDto is null for user ID: " + userId);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        System.out.println("User found: " + responseDto.getUser());
+        
+        if (responseDto.getUser() == null) {
+            System.out.println("User object is null");
+        } else {
+            System.out.println("Department ID: " + responseDto.getUser().getDepartmentId());
+        }
+
         return ResponseEntity.ok(responseDto);
     }
+
 }

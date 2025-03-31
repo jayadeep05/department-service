@@ -1,30 +1,25 @@
 package userservice.dto;
 
 public class ResponseDto {
-	private DepartmentDto department;
+	
+	private DepartmentDto departmentId;
 	private UserDto user;
 	
 	
-//	public Long getEmployeeId() {
-//		// TODO Auto-generated method stub
-//		return employeeId;
-//	}
-//	
-//	public String getEmail() {
-//		// TODO Auto-generated method stub
-//		return email;
-//		
-//	}
+	public UserDto getUser() {
+		return user;
+	}
+	public void setUser(UserDto user) {
+		this.user = user;
+	}
 	
-	public void setUser(UserDto userDto) {
-		// TODO Auto-generated method stub
-		this.user = userDto;
-		
+	
+	public DepartmentDto getDepartmentId() {
+		return departmentId;
 	}
-	public void setDepartment(DepartmentDto departmentDto) {
-		// TODO Auto-generated method stub
-		this.department = departmentDto;
-		
+	public void setDepartmentId(DepartmentDto departmentId) {
+		this.departmentId = departmentId;
 	}
+
 
 }

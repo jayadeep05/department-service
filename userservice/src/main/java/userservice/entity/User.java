@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Table(name = "departments")
+@Table(name = "users")
 @Setter
 @Getter
 
@@ -15,21 +15,20 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long employeeId;
-	
+	 
 	
 	private String employeeFirstName;
 	private String employeeLastName;
 	private String email;
-	private String departmentId;
+	private Long departmentId; 
 	 
 	public User() {}
 
 	
-	public User(String employeeFirstName, String employeeLastName,String email, String departmentId) {
+	public User(String employeeFirstName, String employeeLastName,String email) {
 		this.employeeFirstName = employeeFirstName;
 		this.employeeLastName = employeeLastName;
 		this.email = email;
-		this.departmentId = departmentId;
 	}
 	
 	public Long getEmployeeId() {
@@ -63,11 +62,11 @@ public class User {
 		  
 	 }
 	 
-	 public String getDepartmentId() {
+	 public Long getDepartmentId() {
 		 return departmentId;
 	 }
 	 
-	 public void setDepartmentId(String departmentId) {
+	 public void setDepartmentId(Long departmentId) {
 		 this.departmentId = departmentId;
 	}
 
